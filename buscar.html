@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Busca tu fragancia favorita en el catálogo completo de PILLI AROMAS.">
+
+
+<title>PILLI AROMAS | Buscar</title>
+
+<link rel="icon" type="image/png" href="img/icono-pillimue.png">
+
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<nav class="navbar">
+
+
+<a href="index.html" class="logo">
+
+<img src="img/icono-pillimue.png" alt="PILLI AROMAS">
+
+<h2>PILLI AROMAS</h2>
+
+</a>
+
+
+<ul class="menu" id="menu">
+
+<li><a href="index.html">Inicio</a></li>
+
+<li><a href="hombres.html">Hombres</a></li>
+
+<li><a href="mujeres.html">Mujeres</a></li>
+
+<li><a href="replicas.html">Réplicas</a></li>
+
+<li><a href="contacto.html">Contacto</a></li>
+
+</ul>
+
+
+<div class="iconos">
+
+<a href="buscar.html">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+</a>
+
+<a href="carrito.html" class="carrito-icono">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+<span id="contador-carrito">
+0
+</span>
+
+</a>
+
+
+<a href="https://wa.me/573332524719?text=Hola,%20quiero%20hacer%20un%20pedido%20en%20PILLI%20AROMAS" target="_blank">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+<i class="fa-solid fa-bars menu-movil" id="menu-btn"></i>
+
+</div>
+
+
+</nav>
+
+</header>
+
+
+
+
+
+<section class="destacados">
+
+
+<h2>Buscar perfumes</h2>
+
+
+<p>
+Encuentra tu fragancia favorita en PILLI AROMAS.
+</p>
+
+
+
+<div class="barra-busqueda">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<label for="buscador" class="sr-only">Buscar perfume</label>
+
+<input 
+type="text"
+id="buscador"
+placeholder="Buscar perfume..."
+>
+
+</div>
+
+
+
+<div class="contenedor-productos" id="resultado">
+
+</div>
+
+
+</section>
+
+<footer>
+
+<p>
+© 2026 PILLI AROMAS | Todos los derechos reservados.
+</p>
+
+</footer>
+
+
+
+<script src="JavaScript/script.js"></script>
+
+<script src="JavaScript/productos.js"></script>
+
+
+<script>
+
+const buscador = document.getElementById("buscador");
+
+const resultado = document.getElementById("resultado");
+
+
+
+productos.forEach(producto => {
+
+
+resultado.innerHTML += `
+
+<article class="producto">
+
+
+<img src="${producto.imagen}" alt="${producto.nombre}" loading="lazy">
+
+
+<h3>${producto.nombre}</h3>
+
+
+<p>
+${producto.descripcion}
+</p>
+
+
+<span>
+${producto.precio}
+</span>
+
+
+
+<a class="producto-whatsapp"
+href="https://wa.me/573332524719?text=Hola,%20estoy%20interesado%20en%20${producto.nombre}%20de%20PILLI%20AROMAS"
+target="_blank">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+Consultar
+
+</a>
+
+
+<button class="btn-carrito"
+onclick="agregarCarrito('${producto.nombre}', '${producto.imagen}', 120000)">
+
+<i class="fa-solid fa-cart-plus"></i>
+
+Agregar al carrito
+
+</button>
+
+
+</article>
+
+`;
+
+});
+
+
+
+
+const productosHTML = document.querySelectorAll(".producto");
+
+
+
+buscador.addEventListener("keyup",()=>{
+
+
+let texto = buscador.value.toLowerCase();
+
+
+
+productosHTML.forEach(producto=>{
+
+
+let nombre = producto.querySelector("h3").innerText.toLowerCase();
+
+
+
+if(nombre.includes(texto)){
+
+
+producto.style.display="block";
+
+
+}else{
+
+
+producto.style.display="none";
+
+
+}
+
+
+});
+
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>
