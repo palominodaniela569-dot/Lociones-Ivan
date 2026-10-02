@@ -1,0 +1,1752 @@
+/* =========================
+   PILLI AROMAS PREMIUM
+========================= */
+
+
+:root{
+
+    --vino:#6b1111;
+    --vino-oscuro:#3b0505;
+    --dorado:#d4af37;
+    --blanco:#ffffff;
+    --gris:#f5f5f5;
+    --texto:#333;
+
+}
+
+
+
+/* =========================
+   RESET GENERAL
+========================= */
+
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    color:var(--texto);
+
+    background:white;
+
+
+    /* Pie de página siempre abajo, aunque la página sea corta */
+
+    display:flex;
+
+    flex-direction:column;
+
+    min-height:100vh;
+
+}
+
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+
+header{
+
+    background:var(--vino);
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+}
+
+
+
+.navbar{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px 0;
+
+}
+
+
+
+/* LOGO */
+
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    text-decoration:none;
+
+    color:white;
+
+}
+
+
+
+.logo img{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    transition:.3s;
+
+}
+
+
+
+.logo img:hover{
+
+    transform:scale(1.1);
+
+}
+
+
+
+.logo h2{
+
+    font-size:22px;
+
+    letter-spacing:1px;
+
+}
+
+
+
+
+
+/* MENU */
+
+
+.menu{
+
+    display:flex;
+
+    gap:30px;
+
+    list-style:none;
+
+}
+
+
+
+.menu a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:17px;
+
+    transition:.3s;
+
+}
+
+
+
+.menu a:hover{
+
+    color:var(--dorado);
+
+}
+
+
+
+
+
+/* ICONOS */
+
+
+.iconos{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+
+
+.iconos a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:20px;
+
+    transition:.3s;
+
+}
+
+
+
+.iconos i{
+
+    cursor:pointer;
+
+}
+
+
+
+.iconos a:hover,
+.iconos i:hover{
+
+    color:var(--dorado);
+
+    transform:scale(1.15);
+
+}
+
+
+
+
+
+/* MENU MOVIL */
+
+
+/* Se oculta en computador. Se escribe como .iconos .menu-movil para que
+   Font Awesome no lo vuelva a mostrar. */
+
+.iconos .menu-movil{
+
+    display:none;
+
+    color:white;
+
+}
+
+
+
+
+
+/* =========================
+   HERO
+========================= */
+
+
+.hero{
+
+    min-height:600px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+
+    background:
+
+    linear-gradient(
+    rgba(0,0,0,.55),
+    rgba(0,0,0,.55)
+    ),
+
+    url("../img/banner.png");
+
+
+    background-size:cover;
+
+    background-position:center;
+
+
+    /* Color de respaldo: se ve mientras carga la foto (en vez de gris) */
+
+    background-color:#4a3210;
+
+}
+
+
+
+
+
+.hero-contenido{
+
+    color:white;
+
+    max-width:750px;
+
+    width:90%;
+
+    animation:entrada 1s ease;
+
+}
+
+
+
+.hero h1{
+
+    font-size:65px;
+
+    letter-spacing:4px;
+
+}
+
+
+
+.hero h2{
+
+    margin:15px 0;
+
+    font-size:30px;
+
+    color:var(--dorado);
+
+}
+
+
+
+.hero p{
+
+    font-size:20px;
+
+    margin-bottom:35px;
+
+}
+
+
+
+
+
+.btn{
+
+    display:inline-block;
+
+    background:var(--dorado);
+
+    color:black;
+
+    padding:15px 40px;
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+
+
+.btn:hover{
+
+    background:white;
+
+    transform:translateY(-5px);
+
+}
+/* =========================
+   PRODUCTOS
+========================= */
+
+
+.destacados{
+
+    padding:70px 8%;
+
+    text-align:center;
+
+}
+
+
+
+.destacados h2{
+
+    color:var(--vino);
+
+    font-size:40px;
+
+}
+
+
+
+.destacados > p{
+
+    margin:15px 0 45px;
+
+    color:#666;
+
+}
+
+
+
+
+
+/* CONTENEDOR PRODUCTOS */
+
+
+.contenedor-productos{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+}
+
+
+
+
+
+/* TARJETA PRODUCTO */
+
+
+.producto{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:25px;
+
+    box-shadow:
+
+    0 8px 25px rgba(0,0,0,.12);
+
+
+    transition:.4s;
+
+    overflow:hidden;
+
+}
+
+
+
+.producto:hover{
+
+    transform:translateY(-12px);
+
+
+    box-shadow:
+
+    0 15px 35px rgba(0,0,0,.25);
+
+}
+
+
+
+
+
+/* IMAGEN PRODUCTO */
+
+
+.producto img{
+
+    width:100%;
+
+    height:270px;
+
+    object-fit:contain;
+
+    transition:.4s;
+
+}
+
+
+
+.producto:hover img{
+
+    transform:scale(1.08);
+
+}
+
+
+
+
+
+/* TITULO */
+
+
+.producto h3{
+
+    color:var(--vino);
+
+    font-size:23px;
+
+    margin:15px 0;
+
+}
+
+
+
+
+
+/* DESCRIPCIÓN */
+
+
+.producto p{
+
+    color:#666;
+
+    line-height:1.5;
+
+}
+
+
+
+
+
+/* PRECIO */
+
+
+.producto span{
+
+    display:block;
+
+    margin:18px 0;
+
+    color:var(--vino);
+
+    font-size:22px;
+
+    font-weight:bold;
+
+}
+
+
+
+
+
+/* =========================
+   BOTON WHATSAPP PRODUCTO
+========================= */
+
+
+.producto-whatsapp{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+
+    background:#25D366;
+
+    color:white;
+
+
+    padding:12px 20px;
+
+
+    border-radius:30px;
+
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+
+    transition:.3s;
+
+}
+
+
+
+.producto-whatsapp i{
+
+    font-size:22px;
+
+}
+
+
+
+.producto-whatsapp:hover{
+
+    background:#128C7E;
+
+    transform:translateY(-3px);
+
+}
+
+
+
+
+
+/* =========================
+   BOTON CARRITO
+========================= */
+
+
+.btn-carrito{
+
+    width:100%;
+
+    margin-top:15px;
+
+
+    padding:13px;
+
+
+    border:none;
+
+    border-radius:30px;
+
+
+    background:var(--vino);
+
+    color:white;
+
+
+    font-size:16px;
+
+    font-weight:bold;
+
+
+    cursor:pointer;
+
+
+    transition:.3s;
+
+}
+
+
+
+.btn-carrito:hover{
+
+    background:var(--dorado);
+
+    color:var(--vino-oscuro);
+
+    transform:translateY(-3px);
+
+}
+
+
+
+
+
+/* =========================
+   CARRITO ICONO NAVBAR
+========================= */
+
+
+.carrito-icono{
+
+    position:relative;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:22px;
+
+}
+
+
+
+#contador-carrito{
+
+    position:absolute;
+
+
+    top:-12px;
+
+    right:-12px;
+
+
+    width:20px;
+
+    height:20px;
+
+
+    border-radius:50%;
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    background:var(--dorado);
+
+    color:var(--vino-oscuro);
+
+
+    font-size:12px;
+
+    font-weight:bold;
+
+}
+
+
+
+
+
+/* =========================
+   BENEFICIOS
+========================= */
+
+
+.beneficios{
+
+    background:var(--gris);
+
+
+    padding:60px 8%;
+
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+
+    gap:30px;
+
+}
+
+
+
+.beneficio{
+
+    background:white;
+
+
+    padding:35px;
+
+
+    text-align:center;
+
+
+    border-radius:20px;
+
+
+    box-shadow:
+
+    0 5px 20px rgba(0,0,0,.1);
+
+}
+
+
+
+.beneficio-icono{
+
+    font-size:45px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.beneficio h3{
+
+    color:var(--vino);
+
+}
+
+
+
+
+
+/* =========================
+   WHATSAPP FLOTANTE
+========================= */
+
+
+.whatsapp-flotante{
+
+    position:fixed;
+
+
+    right:25px;
+
+    bottom:25px;
+
+
+    width:60px;
+
+    height:60px;
+
+
+    background:#25D366;
+
+    color:white;
+
+
+    border-radius:50%;
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    font-size:30px;
+
+
+    text-decoration:none;
+
+
+    z-index:1000;
+
+
+    transition:.3s;
+
+}
+
+
+
+.whatsapp-flotante:hover{
+
+    transform:scale(1.1);
+
+    background:#128C7E;
+
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+
+footer{
+
+    background:var(--vino-oscuro);
+
+    color:white;
+
+    text-align:center;
+
+    padding:25px;
+
+    margin-top:auto;
+
+}
+
+
+
+/* =========================
+   BUSCADOR
+========================= */
+
+
+.barra-busqueda{
+
+    width:90%;
+
+    max-width:500px;
+
+    margin:40px auto;
+
+
+    display:flex;
+
+    align-items:center;
+
+
+    background:white;
+
+
+    border:2px solid #ddd;
+
+
+    border-radius:30px;
+
+
+    padding:12px 20px;
+
+
+    box-shadow:
+
+    0 5px 15px rgba(0,0,0,.1);
+
+
+    transition:.3s;
+
+}
+
+
+
+.barra-busqueda:focus-within{
+
+    border-color:var(--dorado);
+
+
+    box-shadow:
+
+    0 0 15px rgba(212,175,55,.5);
+
+}
+
+
+
+.barra-busqueda i{
+
+    color:var(--dorado);
+
+    font-size:20px;
+
+    margin-right:12px;
+
+}
+
+
+
+.barra-busqueda input{
+
+    width:100%;
+
+
+    border:none;
+
+
+    outline:none;
+
+
+    background:transparent;
+
+
+    font-size:16px;
+
+}
+
+
+
+
+
+/* =========================
+   PAGINA CARRITO
+========================= */
+
+
+.carrito-contenedor{
+
+    width:90%;
+
+    max-width:1000px;
+
+
+    margin:60px auto;
+
+}
+
+
+
+.carrito-titulo{
+
+    text-align:center;
+
+
+    color:var(--vino);
+
+
+    font-size:40px;
+
+
+    margin-bottom:40px;
+
+}
+
+
+
+
+
+.item-carrito{
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:space-between;
+
+
+    gap:20px;
+
+
+    background:white;
+
+
+    padding:20px;
+
+
+    margin-bottom:20px;
+
+
+    border-radius:20px;
+
+
+    box-shadow:
+
+    0 5px 20px rgba(0,0,0,.12);
+
+}
+
+
+
+
+
+.item-carrito img{
+
+    width:100px;
+
+    height:100px;
+
+
+    object-fit:contain;
+
+}
+
+
+
+.item-info{
+
+    flex:1;
+
+}
+
+
+
+.item-carrito h3{
+
+    color:var(--vino);
+
+}
+
+
+
+.item-carrito p{
+
+    color:#666;
+
+}
+
+
+
+.item-cantidad{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-top:10px;
+
+}
+
+
+
+.cantidad-btn{
+
+    width:30px;
+
+    height:30px;
+
+    border:2px solid var(--vino);
+
+    background:white;
+
+    color:var(--vino);
+
+    border-radius:50%;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+.cantidad-btn:hover{
+
+    background:var(--vino);
+
+    color:white;
+
+}
+
+
+
+.item-cantidad span{
+
+    font-weight:bold;
+
+    min-width:20px;
+
+    text-align:center;
+
+}
+
+
+
+.item-subtotal{
+
+    font-weight:bold;
+
+    color:var(--vino);
+
+    font-size:18px;
+
+    min-width:100px;
+
+    text-align:center;
+
+}
+
+
+
+
+
+.btn-eliminar{
+
+    background:#b00020;
+
+
+    color:white;
+
+
+    border:none;
+
+
+    padding:10px 20px;
+
+
+    border-radius:20px;
+
+
+    cursor:pointer;
+
+
+    transition:.3s;
+
+}
+
+
+
+.btn-eliminar:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+
+
+
+.total-carrito{
+
+    text-align:right;
+
+
+    font-size:28px;
+
+
+    color:var(--vino);
+
+
+    font-weight:bold;
+
+
+    margin-top:30px;
+
+}
+
+
+
+
+
+.btn-comprar{
+
+    display:block;
+
+
+    margin:30px auto;
+
+
+    background:#25D366;
+
+
+    color:white;
+
+
+    padding:15px 40px;
+
+
+    border-radius:40px;
+
+
+    text-decoration:none;
+
+
+    font-weight:bold;
+
+
+    width:max-content;
+
+
+    transition:.3s;
+
+}
+
+
+
+.btn-comprar:hover{
+
+    background:#128C7E;
+
+}
+
+
+
+/* Nota debajo del total del carrito */
+
+.nota-total{
+
+    text-align:right;
+
+    color:#666;
+
+    font-size:15px;
+
+    margin-top:10px;
+
+}
+
+
+
+
+
+/* =========================
+   FILTROS POR CATEGORIA
+========================= */
+
+
+.filtros{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:12px;
+
+    margin-bottom:45px;
+
+}
+
+
+
+.filtro-btn{
+
+    background:white;
+
+    border:2px solid var(--vino);
+
+    color:var(--vino);
+
+    padding:9px 22px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+
+
+.filtro-btn:hover{
+
+    background:var(--dorado);
+
+    border-color:var(--dorado);
+
+    color:var(--vino-oscuro);
+
+}
+
+
+
+.filtro-btn.activo{
+
+    background:var(--vino);
+
+    color:white;
+
+}
+
+
+
+/* =========================
+   UTILIDAD ACCESIBILIDAD
+========================= */
+
+
+.sr-only{
+
+    position:absolute;
+
+    width:1px;
+
+    height:1px;
+
+    padding:0;
+
+    margin:-1px;
+
+    overflow:hidden;
+
+    clip:rect(0,0,0,0);
+
+    white-space:nowrap;
+
+    border:0;
+
+}
+
+
+
+/* =========================
+   AVISO CARRITO (confirmación)
+========================= */
+
+
+.aviso-carrito{
+
+    position:fixed;
+
+    bottom:30px;
+
+    left:50%;
+
+    transform:translateX(-50%) translateY(20px);
+
+    background:var(--vino-oscuro);
+
+    color:white;
+
+    padding:14px 28px;
+
+    border-radius:30px;
+
+    font-weight:bold;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.25);
+
+    opacity:0;
+
+    transition:.3s;
+
+    z-index:2000;
+
+    pointer-events:none;
+
+}
+
+
+
+.aviso-carrito.visible{
+
+    opacity:1;
+
+    transform:translateX(-50%) translateY(0);
+
+}
+
+
+
+/* =========================
+   CARRITO VACIO
+========================= */
+
+
+.carrito-vacio{
+
+    text-align:center;
+
+    color:#666;
+
+    font-size:18px;
+
+    padding:40px 0;
+
+}
+
+
+
+.carrito-vacio a{
+
+    color:var(--vino);
+
+    font-weight:bold;
+
+}
+
+
+
+/* =========================
+   ANIMACIONES
+========================= */
+
+
+@keyframes entrada{
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+
+
+/* =========================
+   TABLET
+========================= */
+
+
+@media(max-width:900px){
+
+
+    .contenedor-productos{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+
+    .menu{
+
+        gap:15px;
+
+    }
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   CELULAR
+========================= */
+
+
+@media(max-width:768px){
+
+
+
+.navbar{
+
+    width:92%;
+
+}
+
+
+
+.menu{
+
+
+    position:absolute;
+
+
+    top:100%;
+
+
+    left:0;
+
+
+    width:100%;
+
+
+    background:var(--vino);
+
+
+    display:none;
+
+
+    flex-direction:column;
+
+
+    align-items:center;
+
+
+    padding:25px;
+
+
+}
+
+
+
+.menu.activo{
+
+    display:flex;
+
+}
+
+
+
+.iconos .menu-movil{
+
+    display:block;
+
+}
+
+
+
+.hero{
+
+    min-height:450px;
+
+}
+
+
+
+.hero h1{
+
+    font-size:40px;
+
+}
+
+
+
+.hero h2{
+
+    font-size:22px;
+
+}
+
+
+
+.hero p{
+
+    font-size:17px;
+
+}
+
+
+
+.contenedor-productos{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.beneficios{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.item-carrito{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+
+
+.total-carrito{
+
+    text-align:center;
+
+}
+
+
+
+.nota-total{
+
+    text-align:center;
+
+}
+
+
+
+}
+
+
+
+
+/* =========================
+   CELULAR PEQUEÑO
+========================= */
+
+
+@media(max-width:480px){
+
+
+
+.navbar{
+
+    gap:10px;
+
+}
+
+
+
+.logo{
+
+    gap:8px;
+
+}
+
+
+
+.logo h2{
+
+    font-size:14px;
+
+    letter-spacing:.5px;
+
+    white-space:nowrap;
+
+}
+
+
+
+.logo img{
+
+    width:40px;
+
+    height:40px;
+
+}
+
+
+
+.iconos{
+
+    gap:10px;
+
+}
+
+
+
+.hero h1{
+
+    font-size:32px;
+
+}
+
+
+
+.destacados h2{
+
+    font-size:30px;
+
+}
+
+
+
+.producto{
+
+    padding:20px;
+
+}
+
+
+
+.producto img{
+
+    height:240px;
+
+}
+
+
+
+.whatsapp-flotante{
+
+    width:55px;
+
+    height:55px;
+
+    font-size:27px;
+
+}
+
+
+
+}
